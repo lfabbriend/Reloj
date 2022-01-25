@@ -1,0 +1,15 @@
+*HORARIOS:
+    Tomar un horario fijo, el de LA como base y replicarlo con tres constantes:
+        -Una constante para ARG (const diffARG = 5)
+        -Una constante para NYC (const diffNYC = 3)
+        -Una constante para LA (const diffLA = 0 )
+
+    Así dependiendo del tipo de objeto suma las diferencias horarias en el reloj.
+
+*AGUJAS:
+    Animar los objetos con CSS en runtime.
+
+
+
+
+
