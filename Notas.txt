@@ -1,5 +1,0 @@
-24/01/2022 11:47 
-Se subió  a GIT el código, tengo un error con el localhost de Google Chrome que no me deja correr el programa.
-No hay errores en el código.
-
-
