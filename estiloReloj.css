@@ -1,23 +1,24 @@
-.reloj {
-background-image: url("giro.jpg");
+.relojAnalogico {
+padding: 100px;    
+background-image: url("imagen\giro.jpg"); /* no está tomando la imagen*/
 width: 300px;
 height: 300px;
-border-radius: 50%;
+border-radius: 300px;
 background-color: #ededed;
-background-size: cover;
+background-size: 100%;
 border: 10px solid #555;
 display: flex;
 }
 
-.reloj img {
-position: relative;
-padding: 300px;
+.relojAnalogico img {
+position:relative;
+height: 300px;
 }
 
-.reloj #minutos {
+.relojAnalogico #minutos {
     position: absolute;
 }
 
-.reloj #segundos {
+.relojAnalogico #segundos {
     position: absolute;
 }

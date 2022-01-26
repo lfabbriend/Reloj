@@ -6,16 +6,25 @@
         <link rel="stylesheet" type="text/css" href="estiloReloj.css" />
     </head>
     <body>
-        <h1>Holis</h1>
+        <section>
         <div>
-            <div>
-                <div class="reloj">
-                    <img src="agujaHoras.png" id="horas" />
-                    <img src="agujaMinutos.png" id="minutos" />
-                    <img src="agujaSegundos.png" id="segundos" />
+            <div">
+                
+                <div class="relojAnalogico">
+                    <img src="imagen\agujaHoras.png" id="horas" />
+                    <img src="imagen\agujaMinutos.png" id="minutos" />
+                    <img src="imagen\agujaSegundos.png" id="segundos" />
+                
                 </div>
             </div>
         </div>
+        </section>
+
+        <section>
+            <div class="relojDigital">
+                <span id="tiempo">00 : 00 : 00</span>
+            </div>
+        </section>    
         <script src="scriptReloj.js"></script>
     </body>
 </html>
