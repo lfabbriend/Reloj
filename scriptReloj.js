@@ -22,10 +22,15 @@ function relojAnalogico() {
 
 setInterval(relojAnalogico,1000);
 
+/*
 let html = document.getElementById("relojDigital");
 setInterval(function(){
     horas = new Date().getHours();
-    minutos = new Date().getMinutes();
+    minutos = new Date().getMinutes();                   así está hecho en internet
     segundos = new Date().getSeconds();
 
     html.innerHTML = horas+" : "+minutos+" : "+segundos;},1000)
+    */
+
+    let html = document.getElementById("relojDigital");
+setInterval( html.innerHTML = horas+" : "+minutos+" : "+segundos,1000) /*yo lo haría así porque ya están seteados horas, mins, segs*/
