@@ -1,0 +1,42 @@
+.relojes {
+    --min-size: 300px;
+
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(var(--min-size), 1fr));
+    grid-auto-rows: var(--min-size);
+    grid-gap: 50px;
+}
+
+.relojAnalogico {
+    position: relative;
+    padding: 100px;
+    background-image: url("./imagen/baseReloj.png"); /* no está tomando la imagen*/
+    width: var(--min-size);
+    height: 100%;
+    border-radius: 50%;
+    background-color: #ededed;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: 10px solid #555;
+}
+
+#minutos,
+#segundos,
+#horas {
+    height: var(--min-size);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+#minutos {
+    transform: translate(-50%, -50%) rotate(var(--mins-rotation));
+}
+
+#segundos {
+    transform: translate(-50%, -50%) rotate(var(--segs-rotation));
+}
+
+#horas {
+    transform: translate(-50%, -50%) rotate(var(--hours-rotation));
+}
