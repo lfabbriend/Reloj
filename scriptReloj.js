@@ -1,14 +1,20 @@
-function relojAnalogico() {
-    horas = new Date().getHours()+12;
+function setTime() {
+    horas = new Date().getHours();
     minutos = new Date().getMinutes();
     segundos = new Date().getSeconds();
+    return horas, minutos, segundos;
+}
+
+function relojAnalogico() {
+   setTime();
 
     if (horas>=12) {
-        porcentajeHoras = horas / 12 * 360;
+        horas = horas ;
+        porcentajeHoras = horas / 24 * 360;  /*fijarse si funciona después de las 12*/
     }
 
     else {
-        porcentajeHoras = horas / 24 * 360;
+        porcentajeHoras = horas / 12 * 360;
     }
 
     porcentajeHoras += minutos / 60 * 30;
@@ -22,15 +28,15 @@ function relojAnalogico() {
 
 setInterval(relojAnalogico,1000);
 
-/*
-let html = document.getElementById("relojDigital");
-setInterval(function(){
-    horas = new Date().getHours();
-    minutos = new Date().getMinutes();                   así está hecho en internet
-    segundos = new Date().getSeconds();
+let html = document.getElementById("tiempo");
 
-    html.innerHTML = horas+" : "+minutos+" : "+segundos;},1000)
-    */
-
-    let html = document.getElementById("relojDigital");
-setInterval( html.innerHTML = horas+" : "+minutos+" : "+segundos,1000)  /*yo lo haría así porque ya están seteados horas, mins, segs*/
+setInterval(function() {
+    setTime();
+    if (horas<10)
+        horas = '0'+horas;
+    if (minutos<10)
+     minutos = '0'+minutos; 
+     if (segundos<10)
+        segundos = '0'+horas;   
+    html.innerHTML = horas+" : "+minutos+" : "+segundos;
+},1000);
