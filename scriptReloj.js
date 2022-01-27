@@ -16,8 +16,8 @@ function relojAnalogico() {
     porcentajeSegundos = segundos / 60 * 360;
 
     document.getElementById("horas").style.transform = "rotate("+porcentajeHoras+"deg)";
-    ocument.getElementById("minutos").style.transform = "rotate("+porcentajeMinutos+"deg)";
-    ocument.getElementById("segundos").style.transform = "rotate("+porcentajeSegundos+"deg)";
+    document.getElementById("minutos").style.transform = "rotate("+porcentajeMinutos+"deg)";
+    document.getElementById("segundos").style.transform = "rotate("+porcentajeSegundos+"deg)";
 }
 
 setInterval(relojAnalogico,1000);
@@ -33,4 +33,4 @@ setInterval(function(){
     */
 
     let html = document.getElementById("relojDigital");
-setInterval( html.innerHTML = horas+" : "+minutos+" : "+segundos,1000) /*yo lo haría así porque ya están seteados horas, mins, segs*/
+setInterval( html.innerHTML = horas+" : "+minutos+" : "+segundos,1000)  /*yo lo haría así porque ya están seteados horas, mins, segs*/
