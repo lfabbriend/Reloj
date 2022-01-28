@@ -7,9 +7,10 @@ class reloj {
 
 
 calculaGrados(){
-    porcentajeHoras = 360 / 12 * horas;
-    porcentajeMinutos = 360 / 60 * minutos;
-    porcentajeSegundos = 360 / 60 * segundos;
+    hsDeg = porcentajeHoras = 360 / 12 * horas;
+    minsDeg = porcentajeMinutos = 360 / 60 * minutos;
+    segsDeg = porcentajeSegundos = 360 / 60 * segundos;
+    return {hsDeg, minsDeg, segsDeg};
 }
 }
 

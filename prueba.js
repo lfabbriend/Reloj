@@ -14,8 +14,12 @@ const relojNyc = new reloj(horas-2,minutos,segundos);
 
 relojArg.calculaGrados();
 
-    document.getElementById("horasArg").style.setProperty("--hours-rotation", porcentajeHoras+"deg");
-    document.getElementById("horasLa").style.setProperty("--hours-rotation", porcentajeHoras+"deg");
-    document.getElementById("horasNyc").style.setProperty("--hours-rotation", porcentajeHoras+"deg");
-    document.getElementById("minutos").style.setProperty("--mins-rotation", porcentajeMinutos+"deg");
-    document.getElementById("segundos").style.setProperty("--segs-rotation", porcentajeSegundos+"deg");
+    document.getElementById("horasArg").style.setProperty("--hours-rotation", relojArg.calculaGrados().hsDeg+"deg");
+    document.getElementById("horasLa").style.setProperty("--hours-rotation", relojLa.calculaGrados().hsDeg+"deg");
+    document.getElementById("horasNyc").style.setProperty("--hours-rotation", relojNyc.calculaGrados().hsDeg+"deg");
+    document.getElementById("minutos").style.setProperty("--mins-rotation", minDeg+"deg");
+    document.getElementById("segundos").style.setProperty("--segs-rotation", segsDeg+"deg");
+
+    setInterval(relojArg,1000);
+    setInterval(relojLa,1000);
+    setInterval(relojNyc,1000);

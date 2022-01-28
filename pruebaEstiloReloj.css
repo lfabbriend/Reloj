@@ -8,7 +8,9 @@
     grid-gap: 50px;
 }
 
-.relojAnalogico {
+.relojArg,
+.relojLa,
+.relojNyc {
     position: relative;
     padding: 100px;
     background-image: url("./imagen/baseReloj.png"); /* no está tomando la imagen*/
@@ -23,11 +25,13 @@
 
 #minutos,
 #segundos,
-#horas {
+#horasArg,
+#horasNyc,
+#horasLa {
     height: var(--min-size);
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 20%;
+    left: 20%;
 }
 #minutos {
     transform: translate(-50%, -50%) rotate(var(--mins-rotation));
@@ -37,6 +41,8 @@
     transform: translate(-50%, -50%) rotate(var(--segs-rotation));
 }
 
-#horas {
+#horasArg,
+#horasNyc,
+#horasLa {
     transform: translate(-50%, -50%) rotate(var(--hours-rotation));
 }
