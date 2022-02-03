@@ -25,9 +25,7 @@
 
 #minutos,
 #segundos,
-#horasArg,
-#horasNyc,
-#horasLa {
+#horas {
     height: var(--min-size);
     position: absolute;
     top: 20%;
@@ -41,8 +39,6 @@
     transform: translate(-50%, -50%) rotate(var(--segs-rotation));
 }
 
-#horasArg,
-#horasNyc,
-#horasLa {
+#horas {
     transform: translate(-50%, -50%) rotate(var(--hours-rotation));
 }
