@@ -22,6 +22,8 @@ function activarReloj(relojesAnalogicos) {
 
         const partesDelReloj = relojEl.children;
 
+        //creo que aca tengo que poner por cada id del elemento y comparar si es arg, la o nyc y luego iterar por cada elemento (solo las horas)
+
         for (let ii = 0; ii < partesDelReloj.length; ii++) {
             const element = partesDelReloj[ii];
             const id = element.id;
