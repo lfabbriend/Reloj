@@ -3,29 +3,49 @@ function getTime() {
     const horas = tiempo.getHours();
     const minutos = tiempo.getMinutes();    //obtengo el tiempo
     const segundos = tiempo.getSeconds();
-    return {horas, minutos, segundos};
+    return { horas, minutos, segundos };
 }
 
-const {horas,minutos,segundos} = getTime();
 
-const relojArg = new reloj(horas,minutos,segundos);
-const relojLa = new reloj (horas-5,minutos,segundos);   //creo los objetos relojes de cada zona horaria y seteo el tiempo
-const relojNyc = new reloj(horas-2,minutos,segundos);   
+var relojesAnalogicos = document.getElementsByClassName("reloj analog");
 
-const arregloRelojes = [];
-arregloRelojes[0] = relojArg;                           //creo el arreglo con los objetos reloj
-arregloRelojes[1] = relojLa;
-arregloRelojes[2] = relojNyc;
+function activarReloj(relojesAnalogicos) {
 
-//aca flashe locura hice lo que pude, sé que no estoy pudiendo setear los grados a las agujas o será que no se setea el tiempo en los relojes (?
+    const { horas, minutos, segundos } = getTime();
 
-var relojeshtml = document.getElementsByClassName("relojes");
-for(var re = 0, relo =0; i < relojeshtml.length; re++, relo++){
-    relojeshtml[re].horas.style.setProperty("--hours-rotation", arregloRelojes[relo].calculaGrados().hsDeg+"deg");
-    relojeshtml[re].minutos.style.setProperty("--hours-rotation", arregloRelojes[relo].calculaGrados().minsDeg+"deg");  
-    relojeshtml[re].segundos.style.setProperty("--hours-rotation", arregloRelojes[relo].calculaGrados().segsDeg+"deg");
-    setInterval(relojeshtml[re],1000);
-};
+    const relojArg = new reloj(horas, minutos, segundos);
+    const relojLa = new reloj(horas - 5, minutos, segundos);   //creo los objetos relojes de cada zona horaria y seteo el tiempo
+    const relojNyc = new reloj(horas - 2, minutos, segundos);
+
+    for (let i = 0; i < relojesAnalogicos.length; i++) {
+        const relojEl = relojesAnalogicos[i];
+
+        const partesDelReloj = relojEl.children;
+
+        for (let ii = 0; ii < partesDelReloj.length; ii++) {
+            const element = partesDelReloj[ii];
+            const id = element.id;
+
+            switch (id) {
+                case 'horas':
+                    element.style.setProperty("--hours-rotation", relojArg.calculaGrados().hsDeg + "deg")
+                    break;
+                case 'minutos':
+                    element.style.setProperty("--minutos-rotation", relojArg.calculaGrados().minsDeg + "deg")
+                    break;
+                case 'segundos':
+                    element.style.setProperty("--segundos-rotation", relojArg.calculaGrados().segsDeg + "deg")
+                    break;
+            }
+
+        }
+
+
+    }
+}
+
+setInterval(() => activarReloj(relojesAnalogicos), 1000)
+
 
 // document.getElementBy("horasArg").style.setProperty("--hours-rotation", relojArg.calculaGrados().hsDeg+"deg");
 // document.getElementById("horasLa").style.setProperty("--hours-rotation", relojLa.calculaGrados().hsDeg+"deg");
@@ -37,4 +57,6 @@ for(var re = 0, relo =0; i < relojeshtml.length; re++, relo++){
 //setInterval(relojNYC,1000);
 
 //relojDigital
+
+
 

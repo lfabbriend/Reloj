@@ -1,17 +1,18 @@
 class reloj {
-    constructor(hs,mins,segs) {
-    this.horas = horas;
-    this.mins = minutos;
-    this.segs = segundos;
-}
+    constructor(horas, minutos, segundos) {
+        this.horas = horas;
+        this.minutos = minutos;
+        this.segundos = segundos;
+    }
 
 
-calculaGrados(){
-    hsDeg = porcentajeHoras = 360 / 12 * horas;
-    minsDeg = porcentajeMinutos = 360 / 60 * minutos;
-    segsDeg = porcentajeSegundos = 360 / 60 * segundos;
-    return {hsDeg, minsDeg, segsDeg};
+    calculaGrados() {
+        let hsDeg =  360 / 12 * this.horas;
+        let minsDeg =  360 / 60 * this.minutos;
+        let segsDeg =  360 / 60 * this.segundos;
+        return { hsDeg, minsDeg, segsDeg };
+    }
 }
-}
+
 
 

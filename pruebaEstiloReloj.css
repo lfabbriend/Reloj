@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 .relojes {
     --min-size: 300px;
 
@@ -8,9 +13,7 @@
     grid-gap: 50px;
 }
 
-.relojArg,
-.relojLa,
-.relojNyc {
+.analog {
     position: relative;
     padding: 100px;
     background-image: url("./imagen/baseReloj.png"); /* no está tomando la imagen*/
@@ -32,11 +35,11 @@
     left: 20%;
 }
 #minutos {
-    transform: translate(-50%, -50%) rotate(var(--mins-rotation));
+    transform: translate(-50%, -50%) rotate(var(--minutos-rotation));
 }
 
 #segundos {
-    transform: translate(-50%, -50%) rotate(var(--segs-rotation));
+    transform: translate(-50%, -50%) rotate(var(--segundos-rotation));
 }
 
 #horas {
